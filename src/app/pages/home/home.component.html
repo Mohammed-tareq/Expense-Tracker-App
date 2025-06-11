@@ -1,1 +1,64 @@
-<p>home works!</p>
+<div class="home-container px-4 md:px-10 flex flex-col gap-y-8">
+  <h1 class="text-3xl font-bold">
+    Welcome Back,
+    <span class="text-customHsl-accent">{{ userser.getUser().name }}</span>
+  </h1>
+
+  <div class="input-container flex flex-col md:flex-row w-full gap-y-8 md:gap-x-8 mt-6">
+    <!-- Create Budget Form -->
+    <app-form-wrapper [formGroup]="budgetForm" class="w-full md:w-1/2">
+      <div class="input-form flex flex-col gap-y-4">
+        <h3 class="font-bold text-2xl">Create Budget</h3>
+
+        <div class="text-inputs flex flex-col gap-y-2">
+          <label for="name" class="text-[19px] font-bold">Budget Name</label>
+          <input type="text" class="input-select" formControlName="name" placeholder="Enter Budget Name"  id="name">
+        </div>
+
+        <div class="text-inputs flex flex-col gap-y-2">
+          <label for="amount" class="text-[19px] font-bold">Amount</label>
+          <input type="number" class="input-select" formControlName="budget" placeholder="e.g. R120" name="amount" id="amount">
+        </div>
+
+        <button class="btn bg-customHsl-text text-white border-none w-fit text-[19px] px-6 py-2 rounded">
+          Create Budget
+        </button>
+      </div>
+    </app-form-wrapper>
+
+    <!-- Add Expense Form -->
+    <app-form-wrapper [formGroup]="ExpanceForm"  class="w-full md:w-1/2">
+      <div class="input-form flex flex-col gap-y-4">
+        <h3 class="font-bold text-2xl">Add New Expense</h3>
+
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-y-4 md:gap-x-4">
+          <div class="text-inputs flex flex-col gap-y-2 w-full">
+            <label for="expense" class="text-[19px] font-bold">Expense Name</label>
+            <input type="text" class="input-select" placeholder="e.g. Coffee" formControlName id="expense">
+          </div>
+
+          <div class="text-inputs flex flex-col gap-y-2 w-full">
+            <label for="expenseAmount" class="text-[19px] font-bold">Amount</label>
+            <input type="number" class="input-select" placeholder="e.g. R120" formControlName="amount" id="expenseAmount">
+          </div>
+        </div>
+        <div class="text-inputs flex flex-col gap-y-2 w-full">
+          <label class="text-[19px] font-bold">Bugdet Category</label>
+          <select class="input-select" formControlName="category">
+            <option value="">2</option>
+            <option value="">2</option>
+            <option value="">2</option>
+            <!-- @for(){
+              <option value="{{item}}"></option>
+            } -->
+
+          </select>
+        </div>
+
+        <button class="btn bg-customHsl-text text-white border-none w-fit text-[19px] px-6 py-2 rounded">
+          Add Expense
+        </button>
+      </div>
+    </app-form-wrapper>
+  </div>
+</div>
