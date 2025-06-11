@@ -32,8 +32,9 @@ export class UserService {
     this.router.navigateByUrl('create-account');
   }
 
-  isLoggedIn() {
+  isLoggedIn()  {
 
     return Object.keys(this.getUser()).length > 0;
+
   }
 }
