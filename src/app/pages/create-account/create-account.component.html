@@ -1,19 +1,26 @@
-<div class="container flex p-6 w-full h-full justify-center items-center">
- <div class="container flex gap-8">
-  <div class="left-section flex flex-col flex-1 gap-y-4">
-    <h1 class="text-[72px] font-bold">Take Control of <span class="text-customHsl-accent">Your Money</span></h1>
-    <p class="text-2xl">Personal Budgeting is the secret to financial freedom. Start Your Journey Today</p>
+<div class="create-account-container size-auto flex p-6 w-full justify-center items-center">
+  <div class="container flex flex-col md:flex-row gap-8 max-w-7xl w-full">
 
-    <input class="input-select" type="text" name="" placeholder="Enter Account Name">
+    <!-- Left Section -->
+    <div [formGroup]="accountForm" class="left-section flex flex-col flex-1 gap-y-4 text-center md:text-left items-center md:items-start">
+      <h1 class="text-[40px] md:text-[72px] font-bold leading-tight">
+        Take Control of <span class="text-customHsl-accent">Your Money</span>
+      </h1>
+      <p class="text-xl md:text-2xl">
+        Personal Budgeting is the secret to financial freedom. Start Your Journey Today
+      </p>
 
-    <button class="btn bg-customHsl-text text-white border-none w-fit text-[19px]">
-      Create Account
-    </button>
+      <input class="input-select w-full md:w-auto max-w-md px-4 py-2 rounded border"  type="text" formControlName="name" placeholder="Enter Account Name" />
+
+      <button (click)="createAccount()" [disabled]="accountForm.invalid " class="btn bg-customHsl-text text-white border-none w-fit text-[16px] md:text-[19px] px-6 py-2 rounded">
+        Create Account
+      </button>
+    </div>
+
+    <!-- Right Section -->
+    <div class="right-section flex-1 flex justify-center items-center">
+      <img src="/assets/images/budgeting_set_2.jpg" alt="Budgeting illustration" class="w-full max-w-md md:max-w-full h-auto" />
+    </div>
+
   </div>
-  <div class="right-section flex-1">
-    <img src="/assets/images/budgeting_set_2.jpg" alt="Budgeting illustration">
-  </div>
-
 </div>
- </div>
-

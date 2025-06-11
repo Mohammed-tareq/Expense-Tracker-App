@@ -38,15 +38,11 @@
 
 .input-select {
   width: 100%;
-  border-width: 2px;
-  border-style: solid;
-  border-color: var(--bkg);
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  border: 1px solid var(--muted);
+  background-color: var(--bkg);
+  padding: 0.5rem 1rem;
+  color: var(--text);
   border-radius: 4px;
-  font-size: 26px;
-  outline: none;
+  font-size: 20px;
 
 }
